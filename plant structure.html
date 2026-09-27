@@ -1,0 +1,544 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAT Biology Preparation - Plant Structure &amp; Function</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .explanation-card {
+            border-left: 4px solid;
+        }
+        .explanation-correct {
+            border-color: #22c55e; /* green-500 */
+        }
+        .explanation-incorrect {
+            border-color: #ef4444; /* red-500 */
+        }
+        .flagged-explanation {
+            background-color: #fef9c3; /* yellow-100 */
+        }
+        .flag-btn.flagged {
+            background-color: #f59e0b; /* amber-500 */
+            color: white;
+        }
+        /* Custom styles for radio buttons */
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db; /* gray-300 */
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        input[type="radio"]:checked {
+            border-color: #4f46e5; /* indigo-600 */
+            background-color: #4f46e5; /* indigo-600 */
+        }
+        input[type="radio"]:checked::after {
+            content: '';
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .option-label.selected {
+            background-color: #e0e7ff; /* indigo-100 */
+            border-color: #4f46e5; /* indigo-600 */
+        }
+    </style>
+
+
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">IMAT Biology Preparation</h1>
+            <p class="text-lg text-indigo-600 font-semibold mt-1">Topic: Plant Structure &amp; Function (Exam Mode)</p>
+        </header>
+
+        <!-- Quiz Section -->
+        <div id="quiz-container" class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
+            <div id="quiz-header" class="mb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-xl font-semibold">Question <span id="question-number">1</span> of <span id="total-questions">20</span></h2>
+                    <div class="flex items-center space-x-4">
+                        <button id="flag-btn" class="flag-btn bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-sm">Flag</button>
+                        <div id="timer" class="text-lg font-bold text-red-600 bg-red-100 px-4 py-2 rounded-lg">29:51</div>
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            <div id="question-area">
+                <div id="question-text" class="text-lg my-6 leading-relaxed">A botanist observes that a plant growing in an arid environment has leaves with a thick, waxy cuticle, sunken stomata, and a low surface area. These adaptations are primarily to:</div>
+                <div id="options-container" class="space-y-4"><div>
+                    <input type="radio" id="option-Increasetherateofphotosynthesis" name="option" value="Increase the rate of photosynthesis.">
+                    <label for="option-Increasetherateofphotosynthesis" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        Increase the rate of photosynthesis.
+                    </label>
+                </div><div>
+                    <input type="radio" id="option-Reducewaterlossthroughtranspiration" name="option" value="Reduce water loss through transpiration.">
+                    <label for="option-Reducewaterlossthroughtranspiration" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        Reduce water loss through transpiration.
+                    </label>
+                </div><div>
+                    <input type="radio" id="option-Increasetheabsorptionofmineralsfromthesoil" name="option" value="Increase the absorption of minerals from the soil.">
+                    <label for="option-Increasetheabsorptionofmineralsfromthesoil" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        Increase the absorption of minerals from the soil.
+                    </label>
+                </div><div>
+                    <input type="radio" id="option-Providestructuralsupportagainststrongwinds" name="option" value="Provide structural support against strong winds.">
+                    <label for="option-Providestructuralsupportagainststrongwinds" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        Provide structural support against strong winds.
+                    </label>
+                </div><div>
+                    <input type="radio" id="option-Attractpollinatorsmoreeffectively" name="option" value="Attract pollinators more effectively.">
+                    <label for="option-Attractpollinatorsmoreeffectively" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        Attract pollinators more effectively.
+                    </label>
+                </div></div>
+            </div>
+            <div id="navigation-buttons" class="mt-8 flex justify-between">
+                <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled="">Previous</button>
+                <button id="next-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Next</button>
+                <button id="submit-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 hidden">Submit</button>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-container" class="hidden mt-8">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg text-center">
+                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Quiz Complete!</h2>
+                 <p id="time-up-message" class="text-red-600 font-semibold hidden">Time's up!</p>
+                 <p class="text-xl mb-2">Your Score: <span id="score" class="font-bold text-indigo-600"></span></p>
+                 <p id="score-message" class="text-gray-600 mb-6"></p>
+                 <button id="restart-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Try Again</button>
+            </div>
+            <div id="explanations-container" class="mt-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Detailed Explanations</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "A botanist observes that a plant growing in an arid environment has leaves with a thick, waxy cuticle, sunken stomata, and a low surface area. These adaptations are primarily to:",
+                options: [
+                    "Increase the rate of photosynthesis.",
+                    "Reduce water loss through transpiration.",
+                    "Increase the absorption of minerals from the soil.",
+                    "Provide structural support against strong winds.",
+                    "Attract pollinators more effectively."
+                ],
+                correctAnswer: "Reduce water loss through transpiration.",
+                explanation: "This question requires linking multiple structural adaptations to a single physiological challenge.<br><b>Step 1: Analyze the environment.</b> An arid (dry) environment means the primary challenge for the plant is water conservation.<br><b>Step 2: Analyze the adaptations.</b><br>- **Thick waxy cuticle:** The cuticle is a waterproof layer that prevents water from evaporating directly from the leaf surface.<br>- **Sunken stomata:** Stomata located in pits or depressions on the leaf surface trap a layer of humid air, reducing the water potential gradient between the inside of the leaf and the outside air.<br>- **Low surface area:** A smaller leaf surface reduces the total area from which water can evaporate.<br><b>Conclusion:</b> All three of these adaptations work together to minimize water loss via **transpiration**."
+            },
+            {
+                question: "Which of the following correctly describes the cohesion-tension theory of water transport in the xylem?",
+                options: [
+                    "Water is actively pumped up the xylem by cells in the roots.",
+                    "The evaporation of water from leaves creates a negative pressure potential, pulling water up.",
+                    "Water is pushed up the xylem by the positive pressure created by osmosis in the roots.",
+                    "Adhesion of water to the phloem walls is the primary driving force.",
+                    "The process is driven by the active transport of water molecules."
+                ],
+                correctAnswer: "The evaporation of water from leaves creates a negative pressure potential, pulling water up.",
+                explanation: "The cohesion-tension theory explains the bulk flow of water in the xylem.<br><b>1. Transpiration (Evaporation):</b> Water evaporates from the surfaces of mesophyll cells in the leaf and diffuses out through the stomata. This is the primary driving force.<br><b>2. Tension (Negative Pressure):</b> This water loss creates a negative water potential, or tension, in the xylem of the leaf.<br><b>3. Cohesion:</b> Because water molecules are cohesive (they stick to each other via hydrogen bonds), this tension pulls the entire column of water up the xylem from the roots.<br><b>4. Adhesion:</b> Adhesion of water to the xylem walls also helps to counteract gravity, but the main pulling force is the tension created by transpiration."
+            },
+            {
+                question: "A ring of bark, including the phloem, is removed from the trunk of a tree (a process called girdling). Which of the following is the most likely immediate consequence?",
+                options: [
+                    "The leaves will immediately wilt due to a lack of water.",
+                    "The transport of sugars from the leaves to the roots will be interrupted.",
+                    "The tree will be unable to perform photosynthesis.",
+                    "The roots will absorb excess water, causing the tree to swell.",
+                    "The transport of minerals from the roots to the leaves will stop."
+                ],
+                correctAnswer: "The transport of sugars from the leaves to the roots will be interrupted.",
+                explanation: "This question tests the distinct functions of xylem and phloem.<br>- **Xylem** transports water and minerals from the roots to the leaves. It is located deeper within the trunk.<br>- **Phloem** transports sugars (produced during photosynthesis) from the leaves (the source) to other parts of the plant, such as the roots (the sink). The phloem is located in the bark.<br>By removing the bark and phloem, the transport of **sugars** to the roots is cut off. The roots will eventually starve and die, which will then lead to the death of the entire tree. The transport of water in the xylem (Option A and E) will not be immediately affected."
+            },
+            {
+                question: "Which of the following structures is primarily responsible for the absorption of water and minerals from the soil?",
+                options: ["Taproot", "Root cap", "Root hairs", "Cortex", "Vascular cylinder"],
+                correctAnswer: "Root hairs",
+                explanation: "While the entire root system is involved, the vast majority of absorption occurs through the **root hairs**. These are tiny, single-celled extensions of the epidermal cells of the root. Their function is to dramatically increase the surface area of the root, maximizing its ability to absorb water and dissolved mineral ions from the soil."
+            },
+            {
+                question: "The opening and closing of stomata are regulated by the turgor pressure of the:",
+                options: ["Spongy mesophyll cells", "Palisade mesophyll cells", "Guard cells", "Epidermal cells", "Companion cells"],
+                correctAnswer: "Guard cells",
+                explanation: "Stomata are pores on the leaf surface that are each surrounded by a pair of specialized cells called **guard cells**. The opening and closing of the stoma is controlled by changes in the shape of these guard cells.<br>- When guard cells take up water and become **turgid**, they bow outwards, opening the pore.<br>- When guard cells lose water and become **flaccid**, they become less bowed and the pore closes."
+            },
+            {
+                question: "Which tissue in a plant is responsible for transporting sugars, such as sucrose, from the leaves to other parts of the plant like the roots and fruits?",
+                options: ["Xylem", "Phloem", "Epidermis", "Parenchyma", "Collenchyma"],
+                correctAnswer: "Phloem",
+                explanation: "Plants have two main vascular tissues:<br>- **Xylem:** Transports water and dissolved minerals upwards from the roots to the rest of the plant.<br>- **Phloem:** Transports sugars (the products of photosynthesis) from the source (usually leaves) to the sink (parts of the plant that need energy, like roots, fruits, and growing tips). This process is called translocation."
+            },
+            {
+                question: "Which of the following environmental conditions would cause the rate of transpiration to decrease?",
+                options: [
+                    "High wind speed",
+                    "High temperature",
+                    "High light intensity",
+                    "High humidity",
+                    "Low soil water content"
+                ],
+                correctAnswer: "High humidity",
+                explanation: "Transpiration is the evaporation of water from the leaf surface. The rate of this process is driven by the water potential gradient between the moist inside of the leaf and the drier air outside.<br>- High wind, high temperature, and high light intensity all increase the rate of transpiration.<br>- Low soil water content would cause the plant to close its stomata, which would decrease transpiration, but the most direct environmental factor listed is humidity.<br>- **High humidity** means the air outside the leaf is already saturated with water vapor. This **decreases** the water potential gradient between the inside and outside of the leaf, thus reducing the rate of evaporation and transpiration."
+            },
+            {
+                question: "The palisade mesophyll layer of a leaf is adapted for its function because its cells:",
+                options: [
+                    "Are loosely packed with many air spaces to allow for gas exchange.",
+                    "Contain a large number of chloroplasts and are arranged to maximize light absorption.",
+                    "Lack chloroplasts and form a protective outer layer.",
+                    "Contain vascular tissue for transport.",
+                    "Are specialized for storing water."
+                ],
+                correctAnswer: "Contain a large number of chloroplasts and are arranged to maximize light absorption.",
+                explanation: "The leaf is the primary site of photosynthesis. The **palisade mesophyll** is the main photosynthetic tissue.<br>Its cells are elongated and packed tightly together in the upper part of the leaf. This columnar arrangement maximizes the number of cells exposed to direct sunlight. Furthermore, these cells are packed with **chloroplasts** to efficiently carry out photosynthesis. The loosely packed layer with air spaces is the spongy mesophyll."
+            },
+            {
+                question: "Which of the following is NOT a primary function of a plant's root system?",
+                options: ["Anchoring the plant in the soil.", "Absorbing water and minerals.", "Storing carbohydrates.", "Producing sugars via photosynthesis.", "Transporting water to the stem."],
+                correctAnswer: "Producing sugars via photosynthesis.",
+                explanation: "This question uses a 'NOT' trap.<br>- Roots **anchor** the plant, **absorb** water and minerals, and often **store** food reserves like starch (e.g., carrots, potatoes). They also **transport** the absorbed water up to the rest of the plant via the xylem.<br>- The production of sugars via **photosynthesis** occurs in the leaves and other green parts of the plant that contain chloroplasts and are exposed to sunlight. Roots are typically underground and lack chloroplasts."
+            },
+            {
+                question: "The Casparian strip is a waxy band found in the cell walls of the endodermis of a plant root. What is its function?",
+                options: [
+                    "To provide structural support to the root.",
+                    "To increase the surface area for water absorption.",
+                    "To force water and solutes to pass through the cell membranes of the endodermal cells.",
+                    "To protect the root from pathogens.",
+                    "To store starch for the plant."
+                ],
+                correctAnswer: "To force water and solutes to pass through the cell membranes of the endodermal cells.",
+                explanation: "Water can move through the root cortex via two pathways: the apoplast (along cell walls) and the symplast (through the cytoplasm). The **Casparian strip** is a waterproof barrier that blocks the apoplastic pathway at the endodermis. This forces all water and dissolved minerals to pass through the selectively permeable **plasma membrane** of the endodermal cells before they can enter the vascular cylinder (xylem). This gives the plant control over which solutes are transported to the rest of the plant."
+            },
+            {
+                question: "Which of the following is the correct definition of transpiration?",
+                options: [
+                    "The movement of sugars from the leaves to the roots.",
+                    "The loss of water vapor from a plant, primarily through the stomata.",
+                    "The process of gas exchange in the leaves.",
+                    "The absorption of water by the roots from the soil.",
+                    "The production of water during cellular respiration."
+                ],
+                correctAnswer: "The loss of water vapor from a plant, primarily through the stomata.",
+                explanation: "Transpiration is specifically the process by which water is lost from a plant in the form of water vapor. While some water can be lost through the cuticle, the vast majority of transpiration occurs through the stomata on the leaves as an inevitable consequence of them being open for gas exchange ($CO_2$ in, $O_2$ out)."
+            },
+            {
+                question: "A potato is a modified plant structure that stores a large amount of starch. A potato is a modified:",
+                options: ["Root", "Leaf", "Stem", "Flower", "Fruit"],
+                correctAnswer: "Stem",
+                explanation: "A potato is a **tuber**, which is a type of modified underground **stem** specialized for storing food. Evidence for this includes the presence of 'eyes' on the potato, which are actually nodes with axillary buds from which new stems and leaves can sprout. A sweet potato, in contrast, is an example of a modified storage root."
+            },
+            {
+                question: "The movement of water up the xylem is primarily driven by physical forces. Which property of water is most directly responsible for the 'chain' of water molecules being pulled up the stem?",
+                options: ["High specific heat capacity", "Cohesion", "Adhesion", "Its ability to act as a solvent", "Its lower density as a solid"],
+                correctAnswer: "Cohesion",
+                explanation: "The cohesion-tension theory relies on several properties of water.<br>- **Transpiration** provides the pull.<br>- **Adhesion** is the attraction of water molecules to the polar surfaces of the xylem walls, which helps to counteract gravity.<br>- **Cohesion** is the attraction of water molecules to *each other* via hydrogen bonds. This property is what allows the column of water in the xylem to be pulled up as a continuous, unbroken chain from the roots to the leaves."
+            },
+            {
+                question: "In which leaf tissue does the majority of photosynthesis occur?",
+                options: ["Upper epidermis", "Palisade mesophyll", "Spongy mesophyll", "Vascular bundle (vein)", "Lower epidermis"],
+                correctAnswer: "Palisade mesophyll",
+                explanation: "The **palisade mesophyll** is the primary site of photosynthesis. Its cells are located in the upper part of the leaf, are tightly packed, and are rich in chloroplasts to maximize the capture of sunlight. While the spongy mesophyll also contains chloroplasts and photosynthesizes, its main role is to facilitate gas exchange due to its large air spaces."
+            },
+            {
+                question: "Which of the following would be found in the xylem tissue of a plant?",
+                options: ["Sieve tubes and companion cells", "Tracheids and vessel elements", "Guard cells and stomata", "Parenchyma and collenchyma", "Cuticle and epidermis"],
+                correctAnswer: "Tracheids and vessel elements",
+                explanation: "Xylem is the water-conducting tissue. It is composed of several cell types, but the two main conducting cells are **tracheids** and **vessel elements**. These are dead, hollow cells with lignified walls that form a continuous tube for water to travel through. Sieve tubes and companion cells are the main components of phloem."
+            },
+            {
+                question: "A plant is kept in a humid, dark room. Which of the following statements is most likely to be true?",
+                options: [
+                    "The rate of transpiration will be high.",
+                    "The stomata will be wide open.",
+                    "The rate of photosynthesis will be high.",
+                    "The rate of water uptake by the roots will be very low.",
+                    "The plant will produce a large amount of glucose."
+                ],
+                correctAnswer: "The rate of water uptake by the roots will be very low.",
+                explanation: "Let's analyze the conditions.<br>- **Humid:** A high humidity environment reduces the water potential gradient, which slows down transpiration.<br>- **Dark:** Light is required for photosynthesis and is also the primary trigger for stomata to open. In the dark, the stomata will be mostly closed.<br>Since transpiration is the main driving force for pulling water up from the roots (transpirational pull), and this process is significantly reduced by both darkness and high humidity, the rate of **water uptake by the roots will be very low**."
+            },
+            {
+                question: "The transport of sugars in the phloem is described by the pressure-flow hypothesis. This process is considered active because it requires:",
+                options: [
+                    "The evaporation of water from the leaves.",
+                    "The use of ATP to load sugars into the sieve tubes at the source.",
+                    "The cohesion of water molecules in the xylem.",
+                    "The passive diffusion of sugar from the leaves.",
+                    "The contraction of muscle-like fibers in the phloem."
+                ],
+                correctAnswer: "The use of ATP to load sugars into the sieve tubes at the source.",
+                explanation: "The pressure-flow hypothesis states that a high concentration of sugar at the source (e.g., a leaf) creates a high pressure that pushes the sap towards a sink (e.g., a root). The key step that requires energy is the **loading of sucrose** from the leaf cells into the phloem's sieve-tube elements. This process often occurs against a concentration gradient and requires **active transport**, which is powered by **ATP**."
+            },
+            {
+                question: "Which of the following is NOT a function of the waxy cuticle on a leaf?",
+                options: [
+                    "Preventing water loss.", "Protecting against UV radiation.", "Preventing microbial infection.", "Allowing for gas exchange.", "Reducing mechanical damage."
+                ],
+                correctAnswer: "Allowing for gas exchange.",
+                explanation: "This question uses a 'NOT' trap. The cuticle is a waxy, waterproof layer.<br>- It is very effective at **preventing water loss** (A).<br>- It can reflect some **UV radiation** (B).<br>- It provides a physical barrier against **microbes** (C) and **damage** (E).<br>- However, because it is waterproof, it is also impermeable to gases. **Gas exchange** ($CO_2$ in, $O_2$ out) is the function of the specialized pores called **stomata**, not the cuticle."
+            },
+            {
+                question: "The primary meristematic tissue responsible for the increase in the diameter (girth) of a woody stem is the:",
+                options: ["Apical meristem", "Vascular cambium", "Epidermis", "Cortex", "Pith"],
+                correctAnswer: "Vascular cambium",
+                explanation: "Plant growth occurs in regions of actively dividing cells called meristems.<br>- **Apical meristems**, found at the tips of roots and shoots, are responsible for primary growth (increase in length).<br>- **Lateral meristems** are responsible for secondary growth (increase in thickness or girth). The main lateral meristem is the **vascular cambium**, which produces new secondary xylem (wood) to the inside and new secondary phloem to the outside."
+            },
+            {
+                question: "A plant's leaves are observed to be wilting. This is a direct result of:",
+                options: [
+                    "A loss of turgor pressure in the cells.",
+                    "An increase in the rate of photosynthesis.",
+                    "A blockage in the phloem.",
+                    "An excess of minerals in the soil.",
+                    "A high rate of cell division in the leaves."
+                ],
+                correctAnswer: "A loss of turgor pressure in the cells.",
+                explanation: "Wilting occurs when the rate of water loss through transpiration exceeds the rate of water absorption by the roots. This leads to a net loss of water from the plant's cells. The large central vacuole shrinks, and the plasma membrane is no longer pressed firmly against the cell wall. This **loss of turgor pressure** causes the cells to become flaccid, and the non-woody parts of the plant, like leaves and young stems, droop or wilt."
+            }
+        ];
+        
+        // quizData.push(...moreQuestions);
+
+
+        let currentQuestionIndex = 0;
+        const userAnswers = new Array(quizData.length).fill(null);
+        const flaggedQuestions = new Array(quizData.length).fill(false);
+        let timerInterval;
+        let timeLeft = 30 * 60; // 30 minutes in seconds
+
+        const questionNumberEl = document.getElementById('question-number');
+        const totalQuestionsEl = document.getElementById('total-questions');
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainerEl = document.getElementById('options-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const flagBtn = document.getElementById('flag-btn');
+        const timerEl = document.getElementById('timer');
+        const progressBarEl = document.getElementById('progress-bar');
+        const quizContainer = document.getElementById('quiz-container');
+        const resultsContainer = document.getElementById('results-container');
+        const scoreEl = document.getElementById('score');
+        const scoreMessageEl = document.getElementById('score-message');
+        const timeUpMessageEl = document.getElementById('time-up-message');
+        const explanationsContainer = document.getElementById('explanations-container');
+        const restartBtn = document.getElementById('restart-btn');
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timeUpMessageEl.classList.remove('hidden');
+                    showResults();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function updateProgress() {
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            const progressPercentage = (answeredCount / quizData.length) * 100;
+            progressBarEl.style.width = `${progressPercentage}%`;
+        }
+        
+        function toggleFlag() {
+            flaggedQuestions[currentQuestionIndex] = !flaggedQuestions[currentQuestionIndex];
+            updateFlagButton();
+        }
+
+        function updateFlagButton() {
+             if (flaggedQuestions[currentQuestionIndex]) {
+                flagBtn.classList.add('flagged');
+                flagBtn.textContent = 'Unflag';
+            } else {
+                flagBtn.classList.remove('flagged');
+                flagBtn.textContent = 'Flag';
+            }
+        }
+
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionNumberEl.textContent = currentQuestionIndex + 1;
+            questionTextEl.innerHTML = currentQuestion.question;
+            optionsContainerEl.innerHTML = '';
+
+            currentQuestion.options.forEach(option => {
+                const optionId = `option-${option.replace(/[^a-zA-Z0-9]/g, '')}`;
+                const optionEl = document.createElement('div');
+                optionEl.innerHTML = `
+                    <input type="radio" id="${optionId}" name="option" value="${option}">
+                    <label for="${optionId}" class="option-label block w-full p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-indigo-50 hover:border-indigo-400 transition duration-200">
+                        ${option}
+                    </label>
+                `;
+                optionsContainerEl.appendChild(optionEl);
+                
+                const radioBtn = optionEl.querySelector('input');
+                const label = optionEl.querySelector('label');
+
+                if (userAnswers[currentQuestionIndex] === option) {
+                    radioBtn.checked = true;
+                    label.classList.add('selected');
+                }
+                
+                label.addEventListener('click', () => {
+                    document.querySelectorAll('.option-label').forEach(l => l.classList.remove('selected'));
+                    label.classList.add('selected');
+                    radioBtn.checked = true;
+                    userAnswers[currentQuestionIndex] = option;
+                    updateProgress();
+                });
+            });
+            
+            // This is the corrected, more robust call to re-render MathJax
+            if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+                // Clear previous typesetting and then re-typeset the specific containers
+                MathJax.typesetClear([questionTextEl, optionsContainerEl]);
+                MathJax.typesetPromise([questionTextEl, optionsContainerEl]);
+            }
+            
+            updateFlagButton();
+            updateButtons();
+        }
+        
+        function updateButtons() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function showResults() {
+            clearInterval(timerInterval);
+            quizContainer.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+
+            let score = 0;
+            quizData.forEach((question, index) => {
+                if (userAnswers[index] === question.correctAnswer) {
+                    score++;
+                }
+            });
+
+            const percentage = Math.round((score / quizData.length) * 100);
+            scoreEl.textContent = `${score} / ${quizData.length} (${percentage}%)`;
+            
+            if (percentage >= 80) {
+                scoreMessageEl.textContent = "Excellent work! You have a strong grasp of these concepts.";
+                scoreEl.className = "font-bold text-green-600";
+            } else if (percentage >= 50) {
+                scoreMessageEl.textContent = "Good job! Review the explanations to improve your understanding.";
+                scoreEl.className = "font-bold text-yellow-500";
+            } else {
+                scoreMessageEl.textContent = "Keep practicing. Read the explanations carefully to learn from your mistakes.";
+                scoreEl.className = "font-bold text-red-500";
+            }
+
+            explanationsContainer.innerHTML = '';
+            quizData.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                const isCorrect = userAnswer === question.correctAnswer;
+                const isFlagged = flaggedQuestions[index];
+
+                const explanationCard = document.createElement('div');
+                explanationCard.className = `explanation-card bg-white p-5 rounded-lg shadow-md mb-4 ${isCorrect ? 'explanation-correct' : 'explanation-incorrect'} ${isFlagged ? 'flagged-explanation' : ''}`;
+                
+                let answerFeedback;
+                if (userAnswer === null) {
+                    answerFeedback = `<p class="font-semibold">Your answer: <span class="text-gray-500">Not answered</span></p>`;
+                } else {
+                    answerFeedback = `<p class="font-semibold">Your answer: <span class="${isCorrect ? 'text-green-600' : 'text-red-600'}">${userAnswer}</span></p>`;
+                }
+
+                explanationCard.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div class="font-bold text-lg mb-2">Question ${index + 1}</div>
+                        ${isFlagged ? '<span class="text-yellow-600 font-bold text-sm bg-yellow-200 px-2 py-1 rounded">Flagged</span>' : ''}
+                    </div>
+                    <div class="mb-2">${question.question}</div>
+                    ${answerFeedback}
+                    <p class="font-semibold">Correct answer: <span class="text-green-600">${question.correctAnswer}</span></p>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <p class="font-semibold text-indigo-700">Explanation:</p>
+                        <p class="text-gray-700 mt-1">${question.explanation}</p>
+                    </div>
+                `;
+                explanationsContainer.appendChild(explanationCard);
+            });
+            
+            // This is the corrected, more robust call to re-render MathJax
+            if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
+                MathJax.typesetClear([explanationsContainer]);
+                MathJax.typesetPromise([explanationsContainer]);
+            }
+        }
+        
+        function startQuiz() {
+            timeLeft = 30 * 60; // Reset timer
+            currentQuestionIndex = 0;
+            userAnswers.fill(null);
+            flaggedQuestions.fill(false);
+            
+            timeUpMessageEl.classList.add('hidden');
+            resultsContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+            
+            updateProgress();
+            loadQuestion();
+            startTimer();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        });
+
+        submitBtn.addEventListener('click', showResults);
+        flagBtn.addEventListener('click', toggleFlag);
+        restartBtn.addEventListener('click', startQuiz);
+
+        // Initial Load
+        totalQuestionsEl.textContent = quizData.length;
+        startQuiz();
+    </script>
